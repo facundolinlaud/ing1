@@ -21,24 +21,7 @@ TestCase subclass: #CustomerBookTest
 	poolDictionaries: ''
 	category: 'CodigoRepetido-Ejercicio'!
 
-!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:46:54'!
-IfDoing: blockWithError gives: errorClass thendo: codeBlock
-	blockWithError value
-		on: errorClass
-		do: codeBlock value! !
-
-!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 19:36:39'!
-codeBlock: aBlock shouldNotTakeMoreThan: msUpperBound
-	"chequea que el codigo aBlock tome menos de msUpperBound"
-	 | millisecondsBeforeRunning millisecondsAfterRunning |
-	
-	millisecondsBeforeRunning := Time millisecondClockValue * millisecond.
-	aBlock value.
-	millisecondsAfterRunning := Time millisecondClockValue * millisecond.
-	
-	self assert: (millisecondsAfterRunning-millisecondsBeforeRunning) < (msUpperBound * millisecond)! !
-
-!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:50:53'!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:12:46'!
 test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
 
 	| customerBook |
@@ -62,19 +45,20 @@ test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds
 	self codeBlock: [customerBook removeCustomerNamed: paulMcCartney.] shouldNotTakeMoreThan: 100 
 ! !
 
-!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:52:32'!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:32:28'!
 test03CanNotAddACustomerWithEmptyName 
 
 	| customerBook |
 			
 	customerBook := CustomerBook new.
 
-	self ifDoing: [ customerBook addCustomerNamed: ''.
-	self] gives: Error thendo: [ :anError | 
+	self ifDoing: [ customerBook addCustomerNamed: ''. self fail] 
+	gives: Error
+	thenDo: [ :anError | 
 			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
 			self assert: customerBook isEmpty ]! !
 
-!CustomerBookTest methodsFor: 'testing' stamp: 'HAW 8/28/2017 08:57:25'!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:35:12'!
 test04CanNotRemoveAnInvalidCustomer
 	
 	| customerBook johnLennon |
@@ -83,10 +67,10 @@ test04CanNotRemoveAnInvalidCustomer
 	johnLennon := 'John Lennon'.
 	customerBook addCustomerNamed: johnLennon.
 	
-	[ customerBook removeCustomerNamed: 'Paul McCartney'.
-	self fail ]
-		on: NotFound 
-		do: [ :anError | 
+	self ifDoing: [ customerBook removeCustomerNamed: 'Paul McCartney'.
+	self fail ] 
+	gives: NotFound 
+	thenDo: [ :anError | 
 			self assert: customerBook numberOfCustomers = 1.
 			self assert: (customerBook includesCustomerNamed: johnLennon) ]
 ! !
@@ -178,6 +162,25 @@ version2test03CanNotAddACustomerWithEmptyName
 	self] gives: Error thendo: [ :anError | 
 			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
 			self assert: customerBook isEmpty ]! !
+
+
+!CustomerBookTest methodsFor: 'code-time-testing' stamp: 'CR 9/2/2019 19:36:39'!
+codeBlock: aBlock shouldNotTakeMoreThan: msUpperBound
+	"chequea que el codigo aBlock tome menos de msUpperBound"
+	 | millisecondsBeforeRunning millisecondsAfterRunning |
+	
+	millisecondsBeforeRunning := Time millisecondClockValue * millisecond.
+	aBlock value.
+	millisecondsAfterRunning := Time millisecondClockValue * millisecond.
+	
+	self assert: (millisecondsAfterRunning-millisecondsBeforeRunning) < (msUpperBound * millisecond)! !
+
+
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/2/2019 21:32:36'!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock! !
 
 
 !classDefinition: #CustomerBook category: #'CodigoRepetido-Ejercicio'!
