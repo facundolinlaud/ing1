@@ -1,25 +1,25 @@
-!classDefinition: #CantSuspend category: #'CodigoRepetido-Ejercicio'!
+!classDefinition: #CantSuspend category: #'ej18-codigo-repetido'!
 Error subclass: #CantSuspend
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'CodigoRepetido-Ejercicio'!
+	category: 'ej18-codigo-repetido'!
 
 
-!classDefinition: #NotFound category: #'CodigoRepetido-Ejercicio'!
+!classDefinition: #NotFound category: #'ej18-codigo-repetido'!
 Error subclass: #NotFound
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'CodigoRepetido-Ejercicio'!
+	category: 'ej18-codigo-repetido'!
 
 
-!classDefinition: #CustomerBookTest category: #'CodigoRepetido-Ejercicio'!
+!classDefinition: #CustomerBookTest category: #'ej18-codigo-repetido'!
 TestCase subclass: #CustomerBookTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'CodigoRepetido-Ejercicio'!
+	category: 'ej18-codigo-repetido'!
 
 !CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:12:46'!
 test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
@@ -151,18 +151,6 @@ test08CanNotSuspendAnAlreadySuspendedCustomer
 			self assert: (customerBook includesCustomerNamed: johnLennon) ]
 ! !
 
-!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:45:15'!
-version2test03CanNotAddACustomerWithEmptyName 
-
-	| customerBook |
-			
-	customerBook := CustomerBook new.
-
-	self ifDoing: [ customerBook addCustomerNamed: ''.
-	self] gives: Error thendo: [ :anError | 
-			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
-			self assert: customerBook isEmpty ]! !
-
 
 !CustomerBookTest methodsFor: 'code-time-testing' stamp: 'CR 9/2/2019 19:36:39'!
 codeBlock: aBlock shouldNotTakeMoreThan: msUpperBound
@@ -183,12 +171,12 @@ ifDoing: blockWithError gives: errorClass thenDo: codeBlock
 		do: codeBlock! !
 
 
-!classDefinition: #CustomerBook category: #'CodigoRepetido-Ejercicio'!
+!classDefinition: #CustomerBook category: #'ej18-codigo-repetido'!
 Object subclass: #CustomerBook
 	instanceVariableNames: 'suspended active'
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'CodigoRepetido-Ejercicio'!
+	category: 'ej18-codigo-repetido'!
 
 !CustomerBook methodsFor: 'testing' stamp: 'NR 4/3/2019 10:14:26'!
 includesCustomerNamed: aName
@@ -278,7 +266,7 @@ suspendCustomerNamed: aName
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
-!classDefinition: 'CustomerBook class' category: #'CodigoRepetido-Ejercicio'!
+!classDefinition: 'CustomerBook class' category: #'ej18-codigo-repetido'!
 CustomerBook class
 	instanceVariableNames: ''!
 
