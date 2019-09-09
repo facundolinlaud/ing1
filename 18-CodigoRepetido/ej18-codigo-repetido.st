@@ -196,11 +196,11 @@ initialize
 	suspended:= OrderedCollection new.! !
 
 
-!CustomerBook methodsFor: 'customer management' stamp: 'NR 4/3/2019 10:14:26'!
+!CustomerBook methodsFor: 'customer management' stamp: 'CR 9/9/2019 11:20:47'!
 addCustomerNamed: aName
 
 	aName isEmpty ifTrue: [ self signalCustomerNameCannotBeEmpty ].
-	((active includes: aName) or: [suspended includes: aName]) ifTrue: [ self signalCustomerAlreadyExists ].
+	(self includesCustomerNamed: aName) ifTrue: [ self signalCustomerAlreadyExists ].
 	
 	active add: aName ! !
 
