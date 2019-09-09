@@ -162,8 +162,9 @@ codeBlock: aBlock shouldNotTakeMoreThan: msUpperBound
 	self assert: (millisecondsAfterRunning-millisecondsBeforeRunning) < (msUpperBound * millisecond)! !
 
 
-!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/2/2019 21:32:36'!
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:56:40'!
 ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	"Si el bloque de codigo da error, ejecutamos el codeBlock"
 	blockWithError
 		on: errorClass
 		do: codeBlock! !
