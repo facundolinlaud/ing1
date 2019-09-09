@@ -116,7 +116,7 @@ test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook
 	
 ! !
 
-!CustomerBookTest methodsFor: 'testing' stamp: 'NR 9/19/2018 17:55:41'!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:45:27'!
 test07CanNotSuspendAnInvalidCustomer
 	
 	| customerBook johnLennon |
@@ -125,15 +125,14 @@ test07CanNotSuspendAnInvalidCustomer
 	johnLennon := 'John Lennon'.
 	customerBook addCustomerNamed: johnLennon.
 	
-	[ customerBook suspendCustomerNamed: 'Paul McCartney'.
-	self fail ]
-		on: CantSuspend 
-		do: [ :anError | 
+	self ifDoing: [ customerBook suspendCustomerNamed: 'Paul McCartney'. self fail ]
+	gives: CantSuspend 
+	thenDo: [ :anError | 
 			self assert: customerBook numberOfCustomers = 1.
-			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+			self assert: (customerBook includesCustomerNamed: johnLennon) ].
 ! !
 
-!CustomerBookTest methodsFor: 'testing' stamp: 'NR 9/19/2018 17:57:11'!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:46:02'!
 test08CanNotSuspendAnAlreadySuspendedCustomer
 	
 	| customerBook johnLennon |
@@ -143,16 +142,15 @@ test08CanNotSuspendAnAlreadySuspendedCustomer
 	customerBook addCustomerNamed: johnLennon.
 	customerBook suspendCustomerNamed: johnLennon.
 	
-	[ customerBook suspendCustomerNamed: johnLennon.
-	self fail ]
-		on: CantSuspend 
-		do: [ :anError | 
+	self ifDoing: [ customerBook suspendCustomerNamed: johnLennon. self fail ]
+	gives: CantSuspend 
+	thenDo: [ :anError | 
 			self assert: customerBook numberOfCustomers = 1.
 			self assert: (customerBook includesCustomerNamed: johnLennon) ]
 ! !
 
 
-!CustomerBookTest methodsFor: 'code-time-testing' stamp: 'CR 9/2/2019 19:36:39'!
+!CustomerBookTest methodsFor: 'time-testing' stamp: 'CR 9/2/2019 19:36:39'!
 codeBlock: aBlock shouldNotTakeMoreThan: msUpperBound
 	"chequea que el codigo aBlock tome menos de msUpperBound"
 	 | millisecondsBeforeRunning millisecondsAfterRunning |
