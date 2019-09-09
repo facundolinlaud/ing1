@@ -1,0 +1,1006 @@
+
+
+----SNAPSHOT----(2 September 2019 20:00:07) repetido.image priorSource: 12787603!
+
+Error!
+!CustomerBookTest methodsFor: 'nil' stamp: 'CR 9/2/2019 20:14:45'!
+ifItGives: errorClass doing: blockWithError thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock value.! !
+!CustomerBookTest methodsFor: 'as yet unclassified' stamp: 'CR 9/2/2019 20:25:09' prior: 50731339!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifItGives: Error doing: [ customerBook addCustomerNamed: ''.
+	self fail ] thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+
+----STARTUP---- (2 September 2019 20:33:46) as /Users/celeste/Documents/macos64/repetido.image!
+
+!CustomerBookTest methodsFor: 'nil' stamp: 'CR 9/2/2019 20:36:58'!
+ifItGives: errorClass doing: blockWithError thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock value.! !
+!CustomerBookTest methodsFor: 'nil' stamp: 'CR 9/2/2019 20:38:19'!
+version2test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifItGives: Error doing: [ customerBook addCustomerNamed: ''.
+	self] thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+
+----SNAPSHOT----(2 September 2019 20:40:19) repetido.image priorSource: 12803426!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:41:04' prior: 50731792!
+version2test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:41:33'!
+IfDoing: blockWithError gives: errorClass thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock value.! !
+
+CustomerBookTest removeSelector: #ifItGives:doing:thendo:!
+
+----SNAPSHOT----(2 September 2019 20:42:14) repetido.image priorSource: 12804937!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:45:07' prior: 50731808!
+version2test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ].! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:45:15' prior: 50731833!
+version2test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+
+----SNAPSHOT----(2 September 2019 20:45:49) repetido.image priorSource: 12805720!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:45:57' prior: 50731339!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:46:46' prior: 50731821!
+IfDoing: blockWithError gives: errorClass thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock value! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:46:54' prior: 50731875!
+IfDoing: blockWithError gives: errorClass thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock value! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:47:16' prior: 50731862!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	^self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:47:36' prior: 50731889!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:50:18' prior: 50731733!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'] shouldNotTakeMoreThan: 50
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:50:53' prior: 50731915!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:52:32' prior: 50731902!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+
+----STARTUP---- (2 September 2019 21:02:28) as /Users/celeste/Documents/macos64/repetido.image!
+
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:45:57' prior: 50731339!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:46:46' prior: 50731821!
+IfDoing: blockWithError gives: errorClass thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock value! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:46:54' prior: 50731964!
+IfDoing: blockWithError gives: errorClass thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock value! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:47:16' prior: 50731951!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	^self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:47:36' prior: 50731978!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:50:18' prior: 50731733!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'] shouldNotTakeMoreThan: 50
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:50:53' prior: 50732004!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 20:52:32' prior: 50731991!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+
+----SNAPSHOT----(2 September 2019 21:09:53) repetido.image priorSource: 12806663!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:10:48' prior: 50732014!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50.
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:12:46' prior: 50732040!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50
+
+! !
+
+----STARTUP---- (2 September 2019 21:18:37) as /Users/celeste/Documents/macos64/repetido.image!
+
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:10:48' prior: 50732014!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50.
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:12:46' prior: 50732063!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50
+
+! !
+
+----STARTUP---- (2 September 2019 21:21:04) as /Users/celeste/Documents/macos64/repetido.image!
+
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:10:48' prior: 50732014!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50.
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:12:46' prior: 50732086!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:10:48' prior: 50732096!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50.
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:12:46' prior: 50732106!
+test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
+
+	| customerBook |
+	
+	customerBook := CustomerBook new.
+	
+	self codeBlock: [customerBook addCustomerNamed: 'John Lennon'.] shouldNotTakeMoreThan: 50
+
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:22:04' prior: 50731971!
+IfDoing: blockWithError gives: errorClass thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock value! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:22:23' prior: 50732126!
+IfDoing: blockWithError gives: errorClass thendo: codeBlock
+	blockWithError value
+		on: errorClass
+		do: codeBlock! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:23:02' prior: 50732024!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''.
+	self fail] gives: Error thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:23:25' prior: 50732140!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''. self fail] 
+	gives: Error
+	thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:24:25' prior: 50732153!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self IfDoing: [ customerBook addCustomerNamed: ''. self fail] 
+	gives: Error
+	thendo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:27:05' prior: 50732133!
+IfDoing: blockWithError gives: errorClass thendo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:30:37' prior: 50732166!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self IfDoing: [ customerBook addCustomerNamed: ''] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:30:48'!
+IfDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock! !
+
+CustomerBookTest removeSelector: #IfDoing:gives:thendo:!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:31:07'!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock! !
+
+CustomerBookTest removeSelector: #IfDoing:gives:thenDo:!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:31:23' prior: 50732186!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:31:29' prior: 50732216!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:31:56' prior: 50732207!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError. 
+	self fail
+		on: errorClass
+		do: codeBlock! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:32:28' prior: 50732229!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''. self fail] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:32:36' prior: 50732242!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock! !
+
+self fail!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/2/2019 21:35:12' prior: 50731351!
+test04CanNotRemoveAnInvalidCustomer
+	
+	| customerBook johnLennon |
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	customerBook addCustomerNamed: johnLennon.
+	
+	self ifDoing: [ customerBook removeCustomerNamed: 'Paul McCartney'.
+	self fail ] 
+	gives: NotFound 
+	thenDo: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+
+CustomerBookTest removeSelector: #version2test03CanNotAddACustomerWithEmptyName!
+
+----QUIT----(2 September 2019 21:51:04) repetido.image priorSource: 12812351!
+
+----STARTUP---- (9 September 2019 09:28:45) as /Users/celeste/Documents/macos64/repetido.image!
+
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:32:12' prior: 50732262!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock
+		self fail.! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:35:08' prior: 50732294!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: []
+		do: self fail.
+		
+		
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:36:30' prior: 50732301!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+
+		
+		
+		
+		! !
+
+[true] on: true do: 1+2 printString!
+
+[true] on: true do: 1+2 printString!
+
+[true] on: true do: 1+2 print !
+
+[true] on: true do: (1+2 print)!
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:41:12' prior: 50732309!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: []
+		do: self fail
+		
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:42:01' prior: 50732321!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		self fail
+		
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:44:09' prior: 50732329!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: [self fail]
+		do: []
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:45:20' prior: 50732249!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:48:05' prior: 50732269!
+test04CanNotRemoveAnInvalidCustomer
+	
+	| customerBook johnLennon |
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	customerBook addCustomerNamed: johnLennon.
+	
+	self ifDoing: [ customerBook removeCustomerNamed: 'Paul McCartney'] 
+	gives: NotFound 
+	thenDo: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:49:11' prior: 50732336!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: []
+		do: [self fail]
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:49:24' prior: 50732344!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: 'pepe'] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+
+hola add: 1!
+
+hola add: 1!
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:52:42' prior: 50732373!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: [:hola]
+		do: [self fail]
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:55:34'!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock else: testFail
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: []
+		do: testFail
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:55:52' prior: 50732381!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: 'pepe'] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]
+	else: [self fail]! !
+
+----STARTUP---- (9 September 2019 09:58:09) as /Users/celeste/Documents/macos64/repetido.image!
+
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:32:12' prior: 50732262!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock
+		self fail.! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:35:08' prior: 50732427!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: []
+		do: self fail.
+		
+		
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:36:30' prior: 50732434!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+
+		
+		
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:41:12' prior: 50732442!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: []
+		do: self fail
+		
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:42:01' prior: 50732449!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		self fail
+		
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:44:09' prior: 50732457!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: [self fail]
+		do: []
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:45:20' prior: 50732249!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:48:05' prior: 50732269!
+test04CanNotRemoveAnInvalidCustomer
+	
+	| customerBook johnLennon |
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	customerBook addCustomerNamed: johnLennon.
+	
+	self ifDoing: [ customerBook removeCustomerNamed: 'Paul McCartney'] 
+	gives: NotFound 
+	thenDo: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:49:11' prior: 50732464!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: []
+		do: [self fail]
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:49:24' prior: 50732472!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: 'pepe'] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:52:42' prior: 50732501!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: [:hola]
+		do: [self fail]
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:55:34'!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock else: testFail
+	blockWithError
+		on: errorClass
+		do: codeBlock 
+		on: []
+		do: testFail
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:55:52' prior: 50732509!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: 'pepe'] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]
+	else: [self fail]! !
+
+CustomerBookTest removeSelector: #ifDoing:gives:thenDo:else:!
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 09:59:17' prior: 50732522!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock.
+	self fail.
+	
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 09:59:26' prior: 50732537!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: 'pepe'] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:01:11' prior: 50732553!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock
+	self fail.
+	
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:01:17' prior: 50732560!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: ''] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:01:33' prior: 50732573!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock.
+	self fail.
+	
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:03:21' prior: 50732593!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock
+		on: []
+		do: [self fail].
+	
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:03:31' prior: 50732580!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: 'juan'] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:07:31' prior: 50732600!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock
+		on: [:pepe]
+		do: [self fail].
+	
+		
+		! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:09:27' prior: 50732621!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock
+		on: Object
+		do: [self fail].
+	
+		
+		! !
+
+OrderedCollection!
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:12:53' prior: 50732608!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: 'juan'] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]
+	else: [self fail]! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:13:14'!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock else: testFail
+	blockWithError
+		on: errorClass
+		do: codeBlock
+		on: Object
+		do: testFail.
+	
+		
+		! !
+
+OrderedCollection!
+
+OrderedCollection new: 'Hola'!
+
+self add: 'pepe' !
+
+self add: 2!
+
+self new!
+
+self add: 13!
+
+self add: 2!
+
+self add: 3!
+
+self add: 7!
+
+self add: 7!
+
+'juan'!
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:21:18' prior: 50732629!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock
+		on: String
+		do: [self fail].
+	
+		
+		! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:21:28' prior: 50732638!
+test03CanNotAddACustomerWithEmptyName 
+
+	| customerBook |
+			
+	customerBook := CustomerBook new.
+
+	self ifDoing: [ customerBook addCustomerNamed: 'juan'] 
+	gives: Error
+	thenDo: [ :anError | 
+			self assert: anError messageText = CustomerBook customerCanNotBeEmptyErrorMessage.
+			self assert: customerBook isEmpty ]! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:25:46' prior: 50732665!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	blockWithError
+		on: errorClass
+		do: codeBlock
+		on: String
+		do: [self fail].
+	
+		
+		! !
+
+----STARTUP---- (9 September 2019 10:32:04) as /Users/celeste/Documents/macos64/repetido.image!
+
+
+----End fileIn of /Users/celeste/facultad/ing1/opcionales/CodigoRepetido-Ejercicio.st----!
+
+----STARTUP---- (9 September 2019 10:34:44) as /Users/celeste/Documents/macos64/repetido.image!
+
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:45:05' prior: 50731406!
+test07CanNotSuspendAnInvalidCustomer
+	
+	| customerBook johnLennon |
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	customerBook addCustomerNamed: johnLennon.
+	
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:45:27' prior: 50732427!
+test07CanNotSuspendAnInvalidCustomer
+	
+	| customerBook johnLennon |
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	customerBook addCustomerNamed: johnLennon.
+	
+	self ifDoing: [ customerBook suspendCustomerNamed: 'Paul McCartney'. self fail ]
+	gives: CantSuspend 
+	thenDo: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ].
+! !
+!CustomerBookTest methodsFor: 'testing' stamp: 'CR 9/9/2019 10:46:02' prior: 50731422!
+test08CanNotSuspendAnAlreadySuspendedCustomer
+	
+	| customerBook johnLennon |
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	customerBook addCustomerNamed: johnLennon.
+	customerBook suspendCustomerNamed: johnLennon.
+	
+	self ifDoing: [ customerBook suspendCustomerNamed: johnLennon. self fail ]
+	gives: CantSuspend 
+	thenDo: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:55:24' prior: 50732262!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	
+	blockWithError
+		on: errorClass
+		do: codeBlock! !
+!CustomerBookTest methodsFor: 'try-catch' stamp: 'CR 9/9/2019 10:56:40' prior: 50732471!
+ifDoing: blockWithError gives: errorClass thenDo: codeBlock
+	"Si el bloque de codigo da error, ejecutamos el codeBlock"
+	blockWithError
+		on: errorClass
+		do: codeBlock! !
+!CustomerBook methodsFor: 'customer management' stamp: 'CR 9/9/2019 11:19:36' prior: 50731468!
+addCustomerNamed: aName
+
+	| testing |
+	aName isEmpty ifTrue: [ self signalCustomerNameCannotBeEmpty ].
+	(testing includesCustomerNamed: aName) ifTrue: [ self signalCustomerAlreadyExists ].
+	
+	active add: aName ! !
+!CustomerBook methodsFor: 'customer management' stamp: 'CR 9/9/2019 11:20:47' prior: 50732487!
+addCustomerNamed: aName
+
+	aName isEmpty ifTrue: [ self signalCustomerNameCannotBeEmpty ].
+	(self includesCustomerNamed: aName) ifTrue: [ self signalCustomerAlreadyExists ].
+	
+	active add: aName ! !
